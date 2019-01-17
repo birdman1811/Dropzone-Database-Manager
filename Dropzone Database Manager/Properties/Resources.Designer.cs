@@ -89,5 +89,25 @@ namespace Dropzone_Database_Manager.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UCM_Flak_Team_Illustration_x2_jpg_WIP_8 {
+            get {
+                object obj = ResourceManager.GetObject("UCM_Flak_Team_Illustration_x2_jpg_WIP_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UCM_Heavy_Hazard_suit__Final_x {
+            get {
+                object obj = ResourceManager.GetObject("UCM_Heavy_Hazard_suit__Final_x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

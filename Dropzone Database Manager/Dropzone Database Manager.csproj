@@ -56,9 +56,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\UnitController.cs" />
     <Compile Include="DataStore\AccountType.cs" />
+    <Compile Include="DataStore\Battlegroup.cs" />
     <Compile Include="DataStore\Rule.cs" />
+    <Compile Include="DataStore\Unit.cs" />
     <Compile Include="DataStore\User.cs" />
+    <Compile Include="DataStore\Weapon.cs" />
+    <Compile Include="View\AddUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddUnitForm.Designer.cs">
+      <DependentUpon>AddUnitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +83,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\UnitMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UnitMenu.Designer.cs">
+      <DependentUpon>UnitMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\AddUnitForm.resx">
+      <DependentUpon>AddUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\UnitMenu.resx">
+      <DependentUpon>UnitMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,10 +132,13 @@
     <None Include="Properties\DZC Logo large transparent %28whiteoutline%29 copy.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <None Include="Properties\UCM Heavy Hazard suit  Final x.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\1 Overgrown Final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\UCM Flak Team Illustration x2.jpg WIP 8.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
