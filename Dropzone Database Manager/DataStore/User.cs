@@ -36,4 +36,4 @@ namespace Dropzone_Database_Manager.DataStore
         internal AccountType AccountType { get => accountType; set => accountType = value; }
     }
 }
-}
+
