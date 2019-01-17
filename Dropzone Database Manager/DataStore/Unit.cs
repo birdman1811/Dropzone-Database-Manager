@@ -8,7 +8,7 @@ namespace Dropzone_Database_Manager.DataStore
 {
     class Unit
     {
-        int id;
+        string _id;
         string name;
         int armour;
         int move;
@@ -30,9 +30,9 @@ namespace Dropzone_Database_Manager.DataStore
         {
         }
 
-        public Unit(int id, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<Rule> special, List<Weapon> weapons, List<string> extraRules)
+        public Unit(string _id, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<Rule> special, List<Weapon> weapons, List<string> extraRules)
         {
-            this.Id = id;
+            this._Id = _id;
             this.Name = name;
             this.Armour = armour;
             this.Move = move;
@@ -51,7 +51,7 @@ namespace Dropzone_Database_Manager.DataStore
             this.ExtraRules = extraRules;
         }
 
-        public int Id { get => id; set => id = value; }
+        public string _Id { get => _id; set => _id = value; }
         public string Name { get => name; set => name = value; }
         public int Armour { get => armour; set => armour = value; }
         public int Move { get => move; set => move = value; }

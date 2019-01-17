@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.UnitsButton = new System.Windows.Forms.Button();
-            this.FactionsButton = new System.Windows.Forms.Button();
-            this.RulesButton = new System.Windows.Forms.Button();
             this.UsersButton = new System.Windows.Forms.Button();
+            this.RulesButton = new System.Windows.Forms.Button();
+            this.FactionsButton = new System.Windows.Forms.Button();
+            this.UnitsButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,25 +48,15 @@
             this.panel1.Size = new System.Drawing.Size(428, 275);
             this.panel1.TabIndex = 0;
             // 
-            // UnitsButton
+            // UsersButton
             // 
-            this.UnitsButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsButton.Location = new System.Drawing.Point(239, 43);
-            this.UnitsButton.Name = "UnitsButton";
-            this.UnitsButton.Size = new System.Drawing.Size(164, 82);
-            this.UnitsButton.TabIndex = 0;
-            this.UnitsButton.Text = "Units";
-            this.UnitsButton.UseVisualStyleBackColor = true;
-            // 
-            // FactionsButton
-            // 
-            this.FactionsButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactionsButton.Location = new System.Drawing.Point(36, 43);
-            this.FactionsButton.Name = "FactionsButton";
-            this.FactionsButton.Size = new System.Drawing.Size(164, 82);
-            this.FactionsButton.TabIndex = 1;
-            this.FactionsButton.Text = "Factions";
-            this.FactionsButton.UseVisualStyleBackColor = true;
+            this.UsersButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsersButton.Location = new System.Drawing.Point(239, 152);
+            this.UsersButton.Name = "UsersButton";
+            this.UsersButton.Size = new System.Drawing.Size(164, 82);
+            this.UsersButton.TabIndex = 3;
+            this.UsersButton.Text = "Users";
+            this.UsersButton.UseVisualStyleBackColor = true;
             // 
             // RulesButton
             // 
@@ -78,15 +68,26 @@
             this.RulesButton.Text = "Rules";
             this.RulesButton.UseVisualStyleBackColor = true;
             // 
-            // UsersButton
+            // FactionsButton
             // 
-            this.UsersButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersButton.Location = new System.Drawing.Point(239, 152);
-            this.UsersButton.Name = "UsersButton";
-            this.UsersButton.Size = new System.Drawing.Size(164, 82);
-            this.UsersButton.TabIndex = 3;
-            this.UsersButton.Text = "Users";
-            this.UsersButton.UseVisualStyleBackColor = true;
+            this.FactionsButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FactionsButton.Location = new System.Drawing.Point(36, 43);
+            this.FactionsButton.Name = "FactionsButton";
+            this.FactionsButton.Size = new System.Drawing.Size(164, 82);
+            this.FactionsButton.TabIndex = 1;
+            this.FactionsButton.Text = "Factions";
+            this.FactionsButton.UseVisualStyleBackColor = true;
+            // 
+            // UnitsButton
+            // 
+            this.UnitsButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsButton.Location = new System.Drawing.Point(239, 43);
+            this.UnitsButton.Name = "UnitsButton";
+            this.UnitsButton.Size = new System.Drawing.Size(164, 82);
+            this.UnitsButton.TabIndex = 0;
+            this.UnitsButton.Text = "Units";
+            this.UnitsButton.UseVisualStyleBackColor = true;
+            this.UnitsButton.Click += new System.EventHandler(this.UnitsButton_Click);
             // 
             // StartMenu
             // 

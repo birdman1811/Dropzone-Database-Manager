@@ -16,5 +16,10 @@ namespace Dropzone_Database_Manager.View
         {
             InitializeComponent();
         }
+
+        private void UnitsButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
