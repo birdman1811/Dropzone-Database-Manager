@@ -59,7 +59,6 @@
     <Compile Include="Controllers\UnitController.cs" />
     <Compile Include="DataStore\AccountType.cs" />
     <Compile Include="DataStore\Battlegroup.cs" />
-    <Compile Include="DataStore\Rule.cs" />
     <Compile Include="DataStore\Unit.cs" />
     <Compile Include="DataStore\User.cs" />
     <Compile Include="DataStore\Weapon.cs" />
@@ -68,6 +67,18 @@
     </Compile>
     <Compile Include="View\AddUnitForm.Designer.cs">
       <DependentUpon>AddUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddUnitSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddUnitSummaryForm.Designer.cs">
+      <DependentUpon>AddUnitSummaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddWeaponsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddWeaponsForm.Designer.cs">
+      <DependentUpon>AddWeaponsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StartMenu.cs">
       <SubType>Form</SubType>
@@ -91,6 +102,12 @@
     </Compile>
     <EmbeddedResource Include="View\AddUnitForm.resx">
       <DependentUpon>AddUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddUnitSummaryForm.resx">
+      <DependentUpon>AddUnitSummaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddWeaponsForm.resx">
+      <DependentUpon>AddWeaponsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>

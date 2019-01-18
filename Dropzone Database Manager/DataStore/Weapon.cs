@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dropzone_Database_Manager.DataStore
 {
-    class Weapon
+    public class Weapon
     {
-        int id;
+        
         string name;
         int energy;
         int shots;
@@ -17,7 +17,7 @@ namespace Dropzone_Database_Manager.DataStore
         string rangeCountered;
         int moveFire;
         string arc;
-        List<Rule> special;
+        List<string> special;
         bool optional;
         int optionalCost;
 
@@ -25,9 +25,9 @@ namespace Dropzone_Database_Manager.DataStore
         {
         }
 
-        public Weapon(int id, string name, int energy, int shots, int accuracy, string rangeFull, string rangeCountered, int moveFire, string arc, List<Rule> special, bool optional, int optionalCost)
+        public Weapon(string name, int energy, int shots, int accuracy, string rangeFull, string rangeCountered, int moveFire, string arc, List<string> special, bool optional, int optionalCost)
         {
-            this.Id = id;
+            
             this.Name = name;
             this.Energy = energy;
             this.Shots = shots;
@@ -41,7 +41,7 @@ namespace Dropzone_Database_Manager.DataStore
             this.OptionalCost = optionalCost;
         }
 
-        public int Id { get => id; set => id = value; }
+        
         public string Name { get => name; set => name = value; }
         public int Energy { get => energy; set => energy = value; }
         public int Shots { get => shots; set => shots = value; }
@@ -52,6 +52,18 @@ namespace Dropzone_Database_Manager.DataStore
         public string Arc { get => arc; set => arc = value; }
         public bool Optional { get => optional; set => optional = value; }
         public int OptionalCost { get => optionalCost; set => optionalCost = value; }
-        internal List<Rule> Special { get => special; set => special = value; }
+        internal List<string> Special { get => special; set => special = value; }
+
+        public void AddRule(string rule)
+        {
+            Special.Add(rule);
+        }
+
+        public void RemoveRule(string rule)
+        {
+            Special.Remove(rule);
+        }
+
+
     }
 }

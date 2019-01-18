@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dropzone_Database_Manager.DataStore
 {
-    class Unit
+    public class Unit
     {
         string _id;
         string name;
@@ -22,7 +22,7 @@ namespace Dropzone_Database_Manager.DataStore
         List<string> squadSizeCoherancy;
         string landingZone;
         List<string> transportOptions;
-        List<Rule> special;
+        List<string> special;
         List<Weapon> weapons;
         List<string> extraRules;
 
@@ -30,7 +30,7 @@ namespace Dropzone_Database_Manager.DataStore
         {
         }
 
-        public Unit(string _id, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<Rule> special, List<Weapon> weapons, List<string> extraRules)
+        public Unit(string _id, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
         {
             this._Id = _id;
             this.Name = name;
@@ -66,7 +66,67 @@ namespace Dropzone_Database_Manager.DataStore
         public string LandingZone { get => landingZone; set => landingZone = value; }
         public List<string> TransportOptions { get => transportOptions; set => transportOptions = value; }
         public List<string> ExtraRules { get => extraRules; set => extraRules = value; }
-        internal List<Rule> Special { get => special; set => special = value; }
+        internal List<string> Special { get => special; set => special = value; }
         internal List<Weapon> Weapons { get => weapons; set => weapons = value; }
+
+        public void AddWeapon(Weapon weapon)
+        {
+            Weapons.Add(weapon);
+        }
+
+        public void RemoveWeapon(Weapon weapon)
+        {
+            Weapons.Remove(weapon);
+        }
+
+        public void AddCM(string cm)
+        {
+            CounterMeasures.Add(cm);
+        }
+
+        public void RemoveCM(string cm)
+        {
+            CounterMeasures.Remove(cm);
+        }
+
+        public void AddSC(string sc)
+        {
+            SquadSizeCoherancy.Add(sc);
+        }
+
+        public void RemoveSC(string sc)
+        {
+            SquadSizeCoherancy.Remove(sc);
+        }
+
+        public void AddTransport(string transport)
+        {
+            TransportOptions.Add(transport);
+        }
+
+        public void RemoveTransport(string transport)
+        {
+            TransportOptions.Remove(transport);
+        }
+
+        public void AddExtraRule(string extraRule)
+        {
+            ExtraRules.Add(extraRule);
+        }
+
+        public void RemoveExtraRule(string extraRule)
+        {
+            ExtraRules.Remove(extraRule);
+        }
+
+        public void AddSpecialRule(string specialRule)
+        {
+            Special.Add(specialRule);
+        }
+
+        public void RemoveSpecialRule(string specialRule)
+        {
+            Special.Remove(specialRule);
+        }
     }
 }

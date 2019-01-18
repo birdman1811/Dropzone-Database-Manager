@@ -11,27 +11,18 @@ using System.Windows.Forms;
 
 namespace Dropzone_Database_Manager.View
 {
-    public partial class AddUnitForm : Form
+    public partial class AddWeaponsForm : Form
     {
-
-        Unit newUnit = new Unit();
-        public AddUnitForm()
+        Unit unit;
+        public AddWeaponsForm(Unit newUnit)
         {
             InitializeComponent();
+            unit = newUnit;
         }
 
         private void MainMenuButton_Click(object sender, EventArgs e)
         {
-            StartMenu newScreen = new StartMenu();
-            newScreen.Show();
-            Close();
-        }
-
-        private void WeaponButton_Click(object sender, EventArgs e)
-        {
-            AddWeaponsForm newScreen = new AddWeaponsForm(newUnit);
-            newScreen.Show();
-            Close();
+            MainMenu newScreen = new MainMenu();
         }
     }
 }
