@@ -29,7 +29,7 @@ namespace Dropzone_Database_Manager.View
         }
 
         private void UnitCompleteButton_Click(object sender, EventArgs e)
-        {
+        {   
             UnitController unitControl = new UnitController();
             unitControl.AddUnit(newUnit);
             UnitMenu newScreen = new UnitMenu();

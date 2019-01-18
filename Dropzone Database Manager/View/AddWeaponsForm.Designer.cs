@@ -58,6 +58,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ContinueButton = new System.Windows.Forms.Button();
+            this.isOptionalCheckBox = new System.Windows.Forms.CheckBox();
+            this.OptionalCostSelect = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MFSelect)).BeginInit();
@@ -66,11 +69,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.energySelect)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.Controls.Add(this.OptionalCostSelect);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.isOptionalCheckBox);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.RemoveWeaponButton);
             this.panel1.Controls.Add(this.WeaponsListBox);
@@ -100,7 +107,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(456, 341);
+            this.button1.Location = new System.Drawing.Point(676, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(253, 58);
             this.button1.TabIndex = 20;
@@ -373,6 +380,36 @@
             this.ContinueButton.UseVisualStyleBackColor = true;
             this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
             // 
+            // isOptionalCheckBox
+            // 
+            this.isOptionalCheckBox.AutoSize = true;
+            this.isOptionalCheckBox.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isOptionalCheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.isOptionalCheckBox.Location = new System.Drawing.Point(450, 330);
+            this.isOptionalCheckBox.Name = "isOptionalCheckBox";
+            this.isOptionalCheckBox.Size = new System.Drawing.Size(194, 28);
+            this.isOptionalCheckBox.TabIndex = 21;
+            this.isOptionalCheckBox.Text = "Optional Weapon";
+            this.isOptionalCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // OptionalCostSelect
+            // 
+            this.OptionalCostSelect.Location = new System.Drawing.Point(450, 397);
+            this.OptionalCostSelect.Name = "OptionalCostSelect";
+            this.OptionalCostSelect.Size = new System.Drawing.Size(72, 20);
+            this.OptionalCostSelect.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(446, 361);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(140, 24);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Optional Cost";
+            // 
             // AddWeaponsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +431,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.energySelect)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,5 +467,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button ContinueButton;
+        private System.Windows.Forms.NumericUpDown OptionalCostSelect;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox isOptionalCheckBox;
     }
 }

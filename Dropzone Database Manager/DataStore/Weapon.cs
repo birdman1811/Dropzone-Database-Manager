@@ -64,6 +64,23 @@ namespace Dropzone_Database_Manager.DataStore
             Special.Remove(rule);
         }
 
+        public string FullString
+        {
+            get
+            {
+                if (this.Optional == true)
+                {
+                    return Name + "(Optional " +OptionalCost + "pts)";
+                }
+                else
+                {
+                    return Name;
+                }
+            }
+
+
+        }
+
 
     }
 }
