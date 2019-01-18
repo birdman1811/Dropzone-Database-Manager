@@ -22,7 +22,17 @@ namespace Dropzone_Database_Manager.View
 
         private void MainMenuButton_Click(object sender, EventArgs e)
         {
-            MainMenu newScreen = new MainMenu();
+            StartMenu newScreen = new StartMenu();
+            newScreen.Show();
+            Close();
+        }
+
+        private void ContinueButton_Click(object sender, EventArgs e)
+        {
+            AddUnitSummaryForm newScreen = new AddUnitSummaryForm(unit);
+            newScreen.Show();
+            Close();
+
         }
     }
 }

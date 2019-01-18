@@ -23,7 +23,9 @@ namespace Dropzone_Database_Manager.View
 
         private void MainMenuButton_Click(object sender, EventArgs e)
         {
-            MainMenu newScreen = new MainMenu();
+            StartMenu newScreen = new StartMenu();
+            newScreen.Show();
+            Close();
         }
 
         private void UnitCompleteButton_Click(object sender, EventArgs e)
