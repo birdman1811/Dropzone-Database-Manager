@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.OptionalCostSelect = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.isOptionalCheckBox = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.RemoveWeaponButton = new System.Windows.Forms.Button();
             this.WeaponsListBox = new System.Windows.Forms.ListBox();
@@ -58,10 +61,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ContinueButton = new System.Windows.Forms.Button();
-            this.isOptionalCheckBox = new System.Windows.Forms.CheckBox();
-            this.OptionalCostSelect = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MFSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accuracySelect)).BeginInit();
@@ -69,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.energySelect)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,6 +104,38 @@
             this.panel1.Size = new System.Drawing.Size(946, 476);
             this.panel1.TabIndex = 3;
             // 
+            // OptionalCostSelect
+            // 
+            this.OptionalCostSelect.Location = new System.Drawing.Point(450, 397);
+            this.OptionalCostSelect.Name = "OptionalCostSelect";
+            this.OptionalCostSelect.Size = new System.Drawing.Size(72, 20);
+            this.OptionalCostSelect.TabIndex = 23;
+            this.OptionalCostSelect.ValueChanged += new System.EventHandler(this.OptionalCostSelect_ValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(446, 361);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(140, 24);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Optional Cost";
+            // 
+            // isOptionalCheckBox
+            // 
+            this.isOptionalCheckBox.AutoSize = true;
+            this.isOptionalCheckBox.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isOptionalCheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.isOptionalCheckBox.Location = new System.Drawing.Point(450, 330);
+            this.isOptionalCheckBox.Name = "isOptionalCheckBox";
+            this.isOptionalCheckBox.Size = new System.Drawing.Size(194, 28);
+            this.isOptionalCheckBox.TabIndex = 21;
+            this.isOptionalCheckBox.Text = "Optional Weapon";
+            this.isOptionalCheckBox.UseVisualStyleBackColor = true;
+            this.isOptionalCheckBox.CheckedChanged += new System.EventHandler(this.IsOptionalCheckBox_CheckedChanged);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +145,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "Add Weapon";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // RemoveWeaponButton
             // 
@@ -124,6 +157,7 @@
             this.RemoveWeaponButton.TabIndex = 19;
             this.RemoveWeaponButton.Text = "Remove";
             this.RemoveWeaponButton.UseVisualStyleBackColor = true;
+            this.RemoveWeaponButton.Click += new System.EventHandler(this.RemoveWeaponButton_Click);
             // 
             // WeaponsListBox
             // 
@@ -157,6 +191,7 @@
             this.RemoveRuleButton.TabIndex = 3;
             this.RemoveRuleButton.Text = "Remove";
             this.RemoveRuleButton.UseVisualStyleBackColor = true;
+            this.RemoveRuleButton.Click += new System.EventHandler(this.RemoveRuleButton_Click);
             // 
             // RulesListBox
             // 
@@ -176,6 +211,7 @@
             this.AddRuleButton.TabIndex = 1;
             this.AddRuleButton.Text = "Add";
             this.AddRuleButton.UseVisualStyleBackColor = true;
+            this.AddRuleButton.Click += new System.EventHandler(this.AddRuleButton_Click);
             // 
             // SpecialRuleText
             // 
@@ -191,6 +227,7 @@
             this.FireArcsText.Name = "FireArcsText";
             this.FireArcsText.Size = new System.Drawing.Size(173, 20);
             this.FireArcsText.TabIndex = 16;
+            this.FireArcsText.TextChanged += new System.EventHandler(this.FireArcsText_TextChanged);
             // 
             // label8
             // 
@@ -209,6 +246,7 @@
             this.MFSelect.Name = "MFSelect";
             this.MFSelect.Size = new System.Drawing.Size(72, 20);
             this.MFSelect.TabIndex = 14;
+            this.MFSelect.ValueChanged += new System.EventHandler(this.MFSelect_ValueChanged);
             // 
             // label7
             // 
@@ -227,6 +265,7 @@
             this.counteredRangeText.Name = "counteredRangeText";
             this.counteredRangeText.Size = new System.Drawing.Size(173, 20);
             this.counteredRangeText.TabIndex = 12;
+            this.counteredRangeText.TextChanged += new System.EventHandler(this.CounteredRangeText_TextChanged);
             // 
             // label6
             // 
@@ -245,6 +284,7 @@
             this.fullRangeText.Name = "fullRangeText";
             this.fullRangeText.Size = new System.Drawing.Size(173, 20);
             this.fullRangeText.TabIndex = 10;
+            this.fullRangeText.TextChanged += new System.EventHandler(this.FullRangeText_TextChanged);
             // 
             // label5
             // 
@@ -263,6 +303,7 @@
             this.accuracySelect.Name = "accuracySelect";
             this.accuracySelect.Size = new System.Drawing.Size(72, 20);
             this.accuracySelect.TabIndex = 8;
+            this.accuracySelect.ValueChanged += new System.EventHandler(this.AccuracySelect_ValueChanged);
             // 
             // label4
             // 
@@ -281,6 +322,7 @@
             this.ShotsSelect.Name = "ShotsSelect";
             this.ShotsSelect.Size = new System.Drawing.Size(72, 20);
             this.ShotsSelect.TabIndex = 6;
+            this.ShotsSelect.ValueChanged += new System.EventHandler(this.ShotsSelect_ValueChanged);
             // 
             // label1
             // 
@@ -299,6 +341,7 @@
             this.energySelect.Name = "energySelect";
             this.energySelect.Size = new System.Drawing.Size(72, 20);
             this.energySelect.TabIndex = 4;
+            this.energySelect.ValueChanged += new System.EventHandler(this.EnergySelect_ValueChanged);
             // 
             // label3
             // 
@@ -317,6 +360,7 @@
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(173, 20);
             this.nameText.TabIndex = 2;
+            this.nameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
             // 
             // label2
             // 
@@ -380,36 +424,6 @@
             this.ContinueButton.UseVisualStyleBackColor = true;
             this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
             // 
-            // isOptionalCheckBox
-            // 
-            this.isOptionalCheckBox.AutoSize = true;
-            this.isOptionalCheckBox.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isOptionalCheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.isOptionalCheckBox.Location = new System.Drawing.Point(450, 330);
-            this.isOptionalCheckBox.Name = "isOptionalCheckBox";
-            this.isOptionalCheckBox.Size = new System.Drawing.Size(194, 28);
-            this.isOptionalCheckBox.TabIndex = 21;
-            this.isOptionalCheckBox.Text = "Optional Weapon";
-            this.isOptionalCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // OptionalCostSelect
-            // 
-            this.OptionalCostSelect.Location = new System.Drawing.Point(450, 397);
-            this.OptionalCostSelect.Name = "OptionalCostSelect";
-            this.OptionalCostSelect.Size = new System.Drawing.Size(72, 20);
-            this.OptionalCostSelect.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(446, 361);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 24);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Optional Cost";
-            // 
             // AddWeaponsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +437,7 @@
             this.Text = "AddWeaponsForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MFSelect)).EndInit();
@@ -431,7 +446,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.energySelect)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).EndInit();
             this.ResumeLayout(false);
 
         }

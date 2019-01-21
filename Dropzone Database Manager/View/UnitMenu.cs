@@ -23,5 +23,12 @@ namespace Dropzone_Database_Manager.View
             newScreen.Show();
             Close();
         }
+
+        private void AddUnitBUtton_Click(object sender, EventArgs e)
+        {
+            AddUnitForm newScreen = new AddUnitForm();
+            newScreen.Show();
+            Close();
+        }
     }
 }

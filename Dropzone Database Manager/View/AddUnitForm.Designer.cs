@@ -31,9 +31,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.factionCombo = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.LandingZoneCombo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.landingZoneSelect = new System.Windows.Forms.NumericUpDown();
             this.infrantryGroup = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,7 +80,6 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.landingZoneSelect)).BeginInit();
             this.infrantryGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FortitudeSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CQBSelect)).BeginInit();
@@ -116,6 +117,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.Controls.Add(this.factionCombo);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.infrantryGroup);
             this.panel1.Controls.Add(this.groupBox3);
@@ -141,10 +144,38 @@
             this.panel1.Size = new System.Drawing.Size(938, 473);
             this.panel1.TabIndex = 3;
             // 
+            // factionCombo
+            // 
+            this.factionCombo.FormattingEnabled = true;
+            this.factionCombo.Items.AddRange(new object[] {
+            "UCM",
+            "Scourge",
+            "PHR",
+            "Shaltari",
+            "Resistance",
+            "Fauna",
+            "Civilian"});
+            this.factionCombo.Location = new System.Drawing.Point(643, 62);
+            this.factionCombo.Name = "factionCombo";
+            this.factionCombo.Size = new System.Drawing.Size(121, 21);
+            this.factionCombo.TabIndex = 27;
+            this.factionCombo.SelectedIndexChanged += new System.EventHandler(this.FactionCombo_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(639, 39);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 20);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Faction";
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.LandingZoneCombo);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.landingZoneSelect);
             this.groupBox4.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox4.Location = new System.Drawing.Point(456, 97);
@@ -153,6 +184,19 @@
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Aircraft";
+            // 
+            // LandingZoneCombo
+            // 
+            this.LandingZoneCombo.FormattingEnabled = true;
+            this.LandingZoneCombo.Items.AddRange(new object[] {
+            "S",
+            "M",
+            "L"});
+            this.LandingZoneCombo.Location = new System.Drawing.Point(25, 49);
+            this.LandingZoneCombo.Name = "LandingZoneCombo";
+            this.LandingZoneCombo.Size = new System.Drawing.Size(121, 28);
+            this.LandingZoneCombo.TabIndex = 18;
+            this.LandingZoneCombo.SelectedIndexChanged += new System.EventHandler(this.LandingZoneCombo_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -164,13 +208,6 @@
             this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 17;
             this.label8.Text = "Landing Zone";
-            // 
-            // landingZoneSelect
-            // 
-            this.landingZoneSelect.Location = new System.Drawing.Point(30, 50);
-            this.landingZoneSelect.Name = "landingZoneSelect";
-            this.landingZoneSelect.Size = new System.Drawing.Size(74, 27);
-            this.landingZoneSelect.TabIndex = 18;
             // 
             // infrantryGroup
             // 
@@ -215,6 +252,7 @@
             this.FortitudeSelect.Name = "FortitudeSelect";
             this.FortitudeSelect.Size = new System.Drawing.Size(74, 27);
             this.FortitudeSelect.TabIndex = 22;
+            this.FortitudeSelect.ValueChanged += new System.EventHandler(this.FortitudeSelect_ValueChanged);
             // 
             // CQBSelect
             // 
@@ -222,6 +260,7 @@
             this.CQBSelect.Name = "CQBSelect";
             this.CQBSelect.Size = new System.Drawing.Size(74, 27);
             this.CQBSelect.TabIndex = 20;
+            this.CQBSelect.ValueChanged += new System.EventHandler(this.CQBSelect_ValueChanged);
             // 
             // groupBox3
             // 
@@ -247,6 +286,7 @@
             this.removeSpecialButton.TabIndex = 3;
             this.removeSpecialButton.Text = "Remove";
             this.removeSpecialButton.UseVisualStyleBackColor = true;
+            this.removeSpecialButton.Click += new System.EventHandler(this.RemoveSpecialButton_Click);
             // 
             // addSpecialButton
             // 
@@ -257,6 +297,7 @@
             this.addSpecialButton.TabIndex = 2;
             this.addSpecialButton.Text = "Add";
             this.addSpecialButton.UseVisualStyleBackColor = true;
+            this.addSpecialButton.Click += new System.EventHandler(this.AddSpecialButton_Click);
             // 
             // specialText
             // 
@@ -300,6 +341,7 @@
             this.removeTransportButton.TabIndex = 3;
             this.removeTransportButton.Text = "Remove";
             this.removeTransportButton.UseVisualStyleBackColor = true;
+            this.removeTransportButton.Click += new System.EventHandler(this.RemoveTransportButton_Click);
             // 
             // addTransportButton
             // 
@@ -310,6 +352,7 @@
             this.addTransportButton.TabIndex = 2;
             this.addTransportButton.Text = "Add";
             this.addTransportButton.UseVisualStyleBackColor = true;
+            this.addTransportButton.Click += new System.EventHandler(this.AddTransportButton_Click);
             // 
             // transportText
             // 
@@ -353,6 +396,7 @@
             this.SCRemoveButton.TabIndex = 3;
             this.SCRemoveButton.Text = "Remove";
             this.SCRemoveButton.UseVisualStyleBackColor = true;
+            this.SCRemoveButton.Click += new System.EventHandler(this.SCRemoveButton_Click);
             // 
             // SCAddButton
             // 
@@ -363,6 +407,7 @@
             this.SCAddButton.TabIndex = 2;
             this.SCAddButton.Text = "Add";
             this.SCAddButton.UseVisualStyleBackColor = true;
+            this.SCAddButton.Click += new System.EventHandler(this.SCAddButton_Click);
             // 
             // SCText
             // 
@@ -393,6 +438,7 @@
             this.TypeCombo.Name = "TypeCombo";
             this.TypeCombo.Size = new System.Drawing.Size(121, 21);
             this.TypeCombo.TabIndex = 14;
+            this.TypeCombo.SelectedIndexChanged += new System.EventHandler(this.TypeCombo_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -422,6 +468,7 @@
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(121, 21);
             this.categoryCombo.TabIndex = 12;
+            this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.CategoryCombo_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -437,9 +484,15 @@
             // pointsSelect
             // 
             this.pointsSelect.Location = new System.Drawing.Point(238, 120);
+            this.pointsSelect.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.pointsSelect.Name = "pointsSelect";
             this.pointsSelect.Size = new System.Drawing.Size(74, 20);
             this.pointsSelect.TabIndex = 10;
+            this.pointsSelect.ValueChanged += new System.EventHandler(this.PointsSelect_ValueChanged);
             // 
             // label5
             // 
@@ -458,6 +511,7 @@
             this.DamageSelect.Name = "DamageSelect";
             this.DamageSelect.Size = new System.Drawing.Size(74, 20);
             this.DamageSelect.TabIndex = 8;
+            this.DamageSelect.ValueChanged += new System.EventHandler(this.DamageSelect_ValueChanged);
             // 
             // label4
             // 
@@ -494,6 +548,7 @@
             this.removeCMButton.TabIndex = 3;
             this.removeCMButton.Text = "Remove";
             this.removeCMButton.UseVisualStyleBackColor = true;
+            this.removeCMButton.Click += new System.EventHandler(this.RemoveCMButton_Click);
             // 
             // addCMButton
             // 
@@ -504,6 +559,7 @@
             this.addCMButton.TabIndex = 2;
             this.addCMButton.Text = "Add";
             this.addCMButton.UseVisualStyleBackColor = true;
+            this.addCMButton.Click += new System.EventHandler(this.AddCMButton_Click);
             // 
             // cmText
             // 
@@ -529,6 +585,7 @@
             this.moveSelect.Name = "moveSelect";
             this.moveSelect.Size = new System.Drawing.Size(74, 20);
             this.moveSelect.TabIndex = 5;
+            this.moveSelect.ValueChanged += new System.EventHandler(this.MoveSelect_ValueChanged);
             // 
             // label3
             // 
@@ -547,6 +604,7 @@
             this.armourSelect.Name = "armourSelect";
             this.armourSelect.Size = new System.Drawing.Size(74, 20);
             this.armourSelect.TabIndex = 3;
+            this.armourSelect.ValueChanged += new System.EventHandler(this.ArmourSelect_ValueChanged);
             // 
             // label2
             // 
@@ -576,6 +634,7 @@
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(185, 20);
             this.nameText.TabIndex = 0;
+            this.nameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
             // 
             // panel3
             // 
@@ -613,7 +672,6 @@
             this.panel1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.landingZoneSelect)).EndInit();
             this.infrantryGroup.ResumeLayout(false);
             this.infrantryGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FortitudeSelect)).EndInit();
@@ -666,7 +724,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown landingZoneSelect;
         private System.Windows.Forms.GroupBox infrantryGroup;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -684,5 +741,8 @@
         private System.Windows.Forms.ListBox transportListBox;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button weaponButton;
+        private System.Windows.Forms.ComboBox LandingZoneCombo;
+        private System.Windows.Forms.ComboBox factionCombo;
+        private System.Windows.Forms.Label label11;
     }
 }

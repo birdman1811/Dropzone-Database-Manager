@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addUnitBUtton = new System.Windows.Forms.Button();
             this.editUnitButton = new System.Windows.Forms.Button();
+            this.addUnitBUtton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -47,16 +47,6 @@
             this.panel1.Size = new System.Drawing.Size(320, 145);
             this.panel1.TabIndex = 0;
             // 
-            // addUnitBUtton
-            // 
-            this.addUnitBUtton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addUnitBUtton.Location = new System.Drawing.Point(14, 28);
-            this.addUnitBUtton.Name = "addUnitBUtton";
-            this.addUnitBUtton.Size = new System.Drawing.Size(143, 99);
-            this.addUnitBUtton.TabIndex = 0;
-            this.addUnitBUtton.Text = "Add Unit";
-            this.addUnitBUtton.UseVisualStyleBackColor = true;
-            // 
             // editUnitButton
             // 
             this.editUnitButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +56,17 @@
             this.editUnitButton.TabIndex = 1;
             this.editUnitButton.Text = "Edit / Delete Unit";
             this.editUnitButton.UseVisualStyleBackColor = true;
+            // 
+            // addUnitBUtton
+            // 
+            this.addUnitBUtton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUnitBUtton.Location = new System.Drawing.Point(14, 28);
+            this.addUnitBUtton.Name = "addUnitBUtton";
+            this.addUnitBUtton.Size = new System.Drawing.Size(143, 99);
+            this.addUnitBUtton.TabIndex = 0;
+            this.addUnitBUtton.Text = "Add Unit";
+            this.addUnitBUtton.UseVisualStyleBackColor = true;
+            this.addUnitBUtton.Click += new System.EventHandler(this.AddUnitBUtton_Click);
             // 
             // panel2
             // 

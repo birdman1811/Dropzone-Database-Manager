@@ -33,7 +33,7 @@ namespace Dropzone_Database_Manager.DataStore
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
         public string Hash { get => hash; set => hash = value; }
-        internal AccountType AccountType { get => accountType; set => accountType = value; }
+        public AccountType AccountType { get => accountType; set => accountType = value; }
     }
 }
 

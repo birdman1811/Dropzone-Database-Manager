@@ -31,12 +31,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.UniqueRuleText = new System.Windows.Forms.TextBox();
-            this.addRuleButton = new System.Windows.Forms.Button();
-            this.uniqueRulesListBox = new System.Windows.Forms.ListBox();
             this.removeRuleButton = new System.Windows.Forms.Button();
+            this.uniqueRulesListBox = new System.Windows.Forms.ListBox();
+            this.addRuleButton = new System.Windows.Forms.Button();
+            this.UniqueRuleText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.unitCompleteButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -78,16 +78,43 @@
             this.panel1.Size = new System.Drawing.Size(520, 463);
             this.panel1.TabIndex = 4;
             // 
-            // titleLabel
+            // removeRuleButton
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.titleLabel.Location = new System.Drawing.Point(20, 18);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(91, 20);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "TitleLAbel";
+            this.removeRuleButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeRuleButton.Location = new System.Drawing.Point(370, 243);
+            this.removeRuleButton.Name = "removeRuleButton";
+            this.removeRuleButton.Size = new System.Drawing.Size(105, 79);
+            this.removeRuleButton.TabIndex = 5;
+            this.removeRuleButton.Text = "Remove Rule";
+            this.removeRuleButton.UseVisualStyleBackColor = true;
+            // 
+            // uniqueRulesListBox
+            // 
+            this.uniqueRulesListBox.FormattingEnabled = true;
+            this.uniqueRulesListBox.Location = new System.Drawing.Point(25, 243);
+            this.uniqueRulesListBox.Name = "uniqueRulesListBox";
+            this.uniqueRulesListBox.Size = new System.Drawing.Size(327, 199);
+            this.uniqueRulesListBox.TabIndex = 4;
+            this.uniqueRulesListBox.SelectedIndexChanged += new System.EventHandler(this.UniqueRulesListBox_SelectedIndexChanged);
+            // 
+            // addRuleButton
+            // 
+            this.addRuleButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addRuleButton.Location = new System.Drawing.Point(370, 112);
+            this.addRuleButton.Name = "addRuleButton";
+            this.addRuleButton.Size = new System.Drawing.Size(105, 79);
+            this.addRuleButton.TabIndex = 3;
+            this.addRuleButton.Text = "Add Rule";
+            this.addRuleButton.UseVisualStyleBackColor = true;
+            this.addRuleButton.Click += new System.EventHandler(this.AddRuleButton_Click);
+            // 
+            // UniqueRuleText
+            // 
+            this.UniqueRuleText.Location = new System.Drawing.Point(24, 112);
+            this.UniqueRuleText.Multiline = true;
+            this.UniqueRuleText.Name = "UniqueRuleText";
+            this.UniqueRuleText.Size = new System.Drawing.Size(328, 113);
+            this.UniqueRuleText.TabIndex = 2;
             // 
             // label1
             // 
@@ -100,41 +127,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Unit Unique Rules";
             // 
-            // UniqueRuleText
+            // titleLabel
             // 
-            this.UniqueRuleText.Location = new System.Drawing.Point(24, 112);
-            this.UniqueRuleText.Multiline = true;
-            this.UniqueRuleText.Name = "UniqueRuleText";
-            this.UniqueRuleText.Size = new System.Drawing.Size(328, 113);
-            this.UniqueRuleText.TabIndex = 2;
-            // 
-            // addRuleButton
-            // 
-            this.addRuleButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addRuleButton.Location = new System.Drawing.Point(370, 112);
-            this.addRuleButton.Name = "addRuleButton";
-            this.addRuleButton.Size = new System.Drawing.Size(105, 79);
-            this.addRuleButton.TabIndex = 3;
-            this.addRuleButton.Text = "Add Rule";
-            this.addRuleButton.UseVisualStyleBackColor = true;
-            // 
-            // uniqueRulesListBox
-            // 
-            this.uniqueRulesListBox.FormattingEnabled = true;
-            this.uniqueRulesListBox.Location = new System.Drawing.Point(25, 243);
-            this.uniqueRulesListBox.Name = "uniqueRulesListBox";
-            this.uniqueRulesListBox.Size = new System.Drawing.Size(327, 199);
-            this.uniqueRulesListBox.TabIndex = 4;
-            // 
-            // removeRuleButton
-            // 
-            this.removeRuleButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeRuleButton.Location = new System.Drawing.Point(370, 243);
-            this.removeRuleButton.Name = "removeRuleButton";
-            this.removeRuleButton.Size = new System.Drawing.Size(105, 79);
-            this.removeRuleButton.TabIndex = 5;
-            this.removeRuleButton.Text = "Remove Rule";
-            this.removeRuleButton.UseVisualStyleBackColor = true;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titleLabel.Location = new System.Drawing.Point(20, 18);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(91, 20);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "TitleLAbel";
             // 
             // panel3
             // 

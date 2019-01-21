@@ -15,11 +15,15 @@ namespace Dropzone_Database_Manager.Controllers
         public void  AddUnit(Unit unit)
         {
             
-            using (var client = new MyCouchClient("http:31.132.4.108:5984", "dropzoneunits"))
+            using (var client = new MyCouchClient("http://31.132.4.108:5984", "dropzoneunits"))
             {
                 string output = JsonConvert.SerializeObject(unit);
+                Console.WriteLine(output);
 
                 var response = client.Documents.PostAsync(output);
+
+                Console.WriteLine(response.IsCompleted);
+                Console.WriteLine(response.Result.Reason);
 
                 MessageBox.Show("Unit Added Sucesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

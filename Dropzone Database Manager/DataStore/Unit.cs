@@ -8,7 +8,8 @@ namespace Dropzone_Database_Manager.DataStore
 {
     public class Unit
     {
-        string _id;
+        string id;
+        string faction;
         string name;
         int armour;
         int move;
@@ -28,11 +29,17 @@ namespace Dropzone_Database_Manager.DataStore
 
         public Unit()
         {
+            CounterMeasures = new List<string>();
+            SquadSizeCoherancy = new List<string>();
+            TransportOptions = new List<string>();
+            Special = new List<string>();
+            Weapons = new List<Weapon>();
+            ExtraRules = new List<string>();
         }
 
-        public Unit(string _id, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
+        public Unit(string id, string faction, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
         {
-            this._Id = _id;
+            this.Id = id;
             this.Name = name;
             this.Armour = armour;
             this.Move = move;
@@ -49,9 +56,10 @@ namespace Dropzone_Database_Manager.DataStore
             this.Special = special;
             this.Weapons = weapons;
             this.ExtraRules = extraRules;
+            this.Faction = faction;
         }
 
-        public string _Id { get => _id; set => _id = value; }
+        public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public int Armour { get => armour; set => armour = value; }
         public int Move { get => move; set => move = value; }
@@ -66,8 +74,9 @@ namespace Dropzone_Database_Manager.DataStore
         public string LandingZone { get => landingZone; set => landingZone = value; }
         public List<string> TransportOptions { get => transportOptions; set => transportOptions = value; }
         public List<string> ExtraRules { get => extraRules; set => extraRules = value; }
-        internal List<string> Special { get => special; set => special = value; }
-        internal List<Weapon> Weapons { get => weapons; set => weapons = value; }
+        public List<string> Special { get => special; set => special = value; }
+        public List<Weapon> Weapons { get => weapons; set => weapons = value; }
+        public string Faction { get => faction; set => faction = value; }
 
         public void AddWeapon(Weapon weapon)
         {

@@ -23,6 +23,7 @@ namespace Dropzone_Database_Manager.DataStore
 
         public Weapon()
         {
+            Special = new List<string>();
         }
 
         public Weapon(string name, int energy, int shots, int accuracy, string rangeFull, string rangeCountered, int moveFire, string arc, List<string> special, bool optional, int optionalCost)
@@ -52,7 +53,7 @@ namespace Dropzone_Database_Manager.DataStore
         public string Arc { get => arc; set => arc = value; }
         public bool Optional { get => optional; set => optional = value; }
         public int OptionalCost { get => optionalCost; set => optionalCost = value; }
-        internal List<string> Special { get => special; set => special = value; }
+        public List<string> Special { get => special; set => special = value; }
 
         public void AddRule(string rule)
         {

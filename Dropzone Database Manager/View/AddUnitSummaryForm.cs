@@ -19,6 +19,8 @@ namespace Dropzone_Database_Manager.View
         {
             InitializeComponent();
             newUnit = unit;
+            uniqueRulesListBox.DataSource = newUnit.ExtraRules;
+            uniqueRulesListBox.DisplayMember = "ExtraRules";
         }
 
         private void MainMenuButton_Click(object sender, EventArgs e)
@@ -29,12 +31,31 @@ namespace Dropzone_Database_Manager.View
         }
 
         private void UnitCompleteButton_Click(object sender, EventArgs e)
-        {   
+        {
+            newUnit.Id = newUnit.Faction + newUnit.Name;
             UnitController unitControl = new UnitController();
             unitControl.AddUnit(newUnit);
             UnitMenu newScreen = new UnitMenu();
             newScreen.Show();
             Close();
+        }
+
+        private void AddRuleButton_Click(object sender, EventArgs e)
+        {
+            newUnit.AddExtraRule(UniqueRuleText.Text);
+            uniqueRulesListBox.DataSource = null;
+            uniqueRulesListBox.DataSource = newUnit.ExtraRules;
+            uniqueRulesListBox.DisplayMember = "ExtraRules";
+            UniqueRuleText.Clear();
+        }
+
+        private void UniqueRulesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ruleRemove = (string)uniqueRulesListBox.SelectedValue;
+            newUnit.RemoveExtraRule(ruleRemove);
+            uniqueRulesListBox.DataSource = null;
+            uniqueRulesListBox.DataSource = newUnit.ExtraRules;
+            uniqueRulesListBox.DisplayMember = "ExtraRules";
         }
     }
 }

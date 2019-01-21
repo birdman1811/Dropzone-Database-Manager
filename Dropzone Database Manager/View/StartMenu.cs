@@ -19,7 +19,9 @@ namespace Dropzone_Database_Manager.View
 
         private void UnitsButton_Click(object sender, EventArgs e)
         {
-
+            UnitMenu newScreen = new UnitMenu();
+            newScreen.Show();
+            Close();
         }
     }
 }

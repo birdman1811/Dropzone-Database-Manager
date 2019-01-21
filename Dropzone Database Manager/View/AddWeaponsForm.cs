@@ -14,10 +14,16 @@ namespace Dropzone_Database_Manager.View
     public partial class AddWeaponsForm : Form
     {
         Unit unit;
+        Weapon newWeapon = new Weapon();
         public AddWeaponsForm(Unit newUnit)
         {
             InitializeComponent();
             unit = newUnit;
+            TitleLabel.Text = "Add Weapons For " + unit.Faction + " " + unit.Name;
+            WeaponsListBox.DataSource = unit.Weapons;
+            WeaponsListBox.DisplayMember = "fullString";
+            RulesListBox.DataSource = newWeapon.Special;
+            RulesListBox.DisplayMember = "Special";
         }
 
         private void MainMenuButton_Click(object sender, EventArgs e)
@@ -33,6 +39,90 @@ namespace Dropzone_Database_Manager.View
             newScreen.Show();
             Close();
 
+        }
+
+        private void NameText_TextChanged(object sender, EventArgs e)
+        {
+            newWeapon.Name = nameText.Text;
+        }
+
+        private void EnergySelect_ValueChanged(object sender, EventArgs e)
+        {
+            newWeapon.Energy = (int)energySelect.Value;
+        }
+
+        private void ShotsSelect_ValueChanged(object sender, EventArgs e)
+        {
+            newWeapon.Shots = (int)ShotsSelect.Value;
+        }
+
+        private void AccuracySelect_ValueChanged(object sender, EventArgs e)
+        {
+            newWeapon.Accuracy = (int)accuracySelect.Value;
+        }
+
+        private void FullRangeText_TextChanged(object sender, EventArgs e)
+        {
+            newWeapon.RangeFull = fullRangeText.Text;
+        }
+
+        private void CounteredRangeText_TextChanged(object sender, EventArgs e)
+        {
+            newWeapon.RangeCountered = counteredRangeText.Text;
+        }
+
+        private void MFSelect_ValueChanged(object sender, EventArgs e)
+        {
+            newWeapon.MoveFire = (int)MFSelect.Value;
+        }
+
+        private void FireArcsText_TextChanged(object sender, EventArgs e)
+        {
+            newWeapon.Arc = FireArcsText.Text;
+        }
+
+        private void IsOptionalCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            newWeapon.Optional = isOptionalCheckBox.Checked;
+        }
+
+        private void OptionalCostSelect_ValueChanged(object sender, EventArgs e)
+        {
+            newWeapon.OptionalCost = (int)OptionalCostSelect.Value;
+        }
+
+        private void AddRuleButton_Click(object sender, EventArgs e)
+        {
+            newWeapon.AddRule(SpecialRuleText.Text);
+            RulesListBox.DataSource = null;
+            RulesListBox.DataSource = newWeapon.Special;
+            RulesListBox.DisplayMember = "Special";
+        }
+
+        private void RemoveRuleButton_Click(object sender, EventArgs e)
+        {
+            string removeRule = (string)RulesListBox.SelectedValue;
+            newWeapon.RemoveRule(removeRule);
+            RulesListBox.DataSource = null;
+            RulesListBox.DataSource = newWeapon.Special;
+            RulesListBox.DisplayMember = "Special";
+        }
+
+        private void RemoveWeaponButton_Click(object sender, EventArgs e)
+        {
+            Weapon weaponToRemove = (Weapon)WeaponsListBox.SelectedItem;
+            unit.RemoveWeapon(weaponToRemove);
+            WeaponsListBox.DataSource = null;
+            WeaponsListBox.DataSource = unit.Weapons;
+            WeaponsListBox.DisplayMember = "fullString";
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            unit.AddWeapon(newWeapon);
+            AddWeaponsForm newScreen = new AddWeaponsForm(unit);
+            newScreen.Show();
+            Close();
         }
     }
 }
