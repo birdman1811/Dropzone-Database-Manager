@@ -42,7 +42,6 @@
             this.SpecialRuleText = new System.Windows.Forms.TextBox();
             this.FireArcsText = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.MFSelect = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.counteredRangeText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,10 +60,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ContinueButton = new System.Windows.Forms.Button();
+            this.MFText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MFSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accuracySelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShotsSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.energySelect)).BeginInit();
@@ -75,6 +74,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.Controls.Add(this.MFText);
             this.panel1.Controls.Add(this.OptionalCostSelect);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.isOptionalCheckBox);
@@ -84,7 +84,6 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.FireArcsText);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.MFSelect);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.counteredRangeText);
             this.panel1.Controls.Add(this.label6);
@@ -239,14 +238,6 @@
             this.label8.Size = new System.Drawing.Size(94, 24);
             this.label8.TabIndex = 15;
             this.label8.Text = "Fire Arcs";
-            // 
-            // MFSelect
-            // 
-            this.MFSelect.Location = new System.Drawing.Point(239, 247);
-            this.MFSelect.Name = "MFSelect";
-            this.MFSelect.Size = new System.Drawing.Size(72, 20);
-            this.MFSelect.TabIndex = 14;
-            this.MFSelect.ValueChanged += new System.EventHandler(this.MFSelect_ValueChanged);
             // 
             // label7
             // 
@@ -424,6 +415,14 @@
             this.ContinueButton.UseVisualStyleBackColor = true;
             this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
             // 
+            // MFText
+            // 
+            this.MFText.Location = new System.Drawing.Point(239, 252);
+            this.MFText.Name = "MFText";
+            this.MFText.Size = new System.Drawing.Size(173, 20);
+            this.MFText.TabIndex = 24;
+            this.MFText.TextChanged += new System.EventHandler(this.MFText_TextChanged);
+            // 
             // AddWeaponsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,7 +439,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MFSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accuracySelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShotsSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.energySelect)).EndInit();
@@ -468,7 +466,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox FireArcsText;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown MFSelect;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button RemoveWeaponButton;
@@ -484,5 +481,6 @@
         private System.Windows.Forms.NumericUpDown OptionalCostSelect;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox isOptionalCheckBox;
+        private System.Windows.Forms.TextBox MFText;
     }
 }

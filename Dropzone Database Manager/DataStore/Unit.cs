@@ -18,7 +18,7 @@ namespace Dropzone_Database_Manager.DataStore
         int points;
         string type;
         string category;
-        int cqb;
+        decimal cqb;
         int fortitude;
         List<string> squadSizeCoherancy;
         string landingZone;
@@ -37,7 +37,7 @@ namespace Dropzone_Database_Manager.DataStore
             ExtraRules = new List<string>();
         }
 
-        public Unit(string id, string faction, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, int cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
+        public Unit(string id, string faction, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, decimal cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
         {
             this.Id = id;
             this.Name = name;
@@ -68,7 +68,7 @@ namespace Dropzone_Database_Manager.DataStore
         public int Points { get => points; set => points = value; }
         public string Type { get => type; set => type = value; }
         public string Category { get => category; set => category = value; }
-        public int Cqb { get => cqb; set => cqb = value; }
+        public decimal Cqb { get => cqb; set => cqb = value; }
         public int Fortitude { get => fortitude; set => fortitude = value; }
         public List<string> SquadSizeCoherancy { get => squadSizeCoherancy; set => squadSizeCoherancy = value; }
         public string LandingZone { get => landingZone; set => landingZone = value; }

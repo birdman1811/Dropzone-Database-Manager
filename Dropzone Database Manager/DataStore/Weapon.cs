@@ -15,7 +15,7 @@ namespace Dropzone_Database_Manager.DataStore
         int accuracy;
         string rangeFull;
         string rangeCountered;
-        int moveFire;
+        string moveFire;
         string arc;
         List<string> special;
         bool optional;
@@ -26,7 +26,7 @@ namespace Dropzone_Database_Manager.DataStore
             Special = new List<string>();
         }
 
-        public Weapon(string name, int energy, int shots, int accuracy, string rangeFull, string rangeCountered, int moveFire, string arc, List<string> special, bool optional, int optionalCost)
+        public Weapon(string name, int energy, int shots, int accuracy, string rangeFull, string rangeCountered, string moveFire, string arc, List<string> special, bool optional, int optionalCost)
         {
             
             this.Name = name;
@@ -49,7 +49,7 @@ namespace Dropzone_Database_Manager.DataStore
         public int Accuracy { get => accuracy; set => accuracy = value; }
         public string RangeFull { get => rangeFull; set => rangeFull = value; }
         public string RangeCountered { get => rangeCountered; set => rangeCountered = value; }
-        public int MoveFire { get => moveFire; set => moveFire = value; }
+        public string MoveFire { get => moveFire; set => moveFire = value; }
         public string Arc { get => arc; set => arc = value; }
         public bool Optional { get => optional; set => optional = value; }
         public int OptionalCost { get => optionalCost; set => optionalCost = value; }

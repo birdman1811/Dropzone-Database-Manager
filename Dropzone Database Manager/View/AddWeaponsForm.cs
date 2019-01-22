@@ -71,10 +71,7 @@ namespace Dropzone_Database_Manager.View
             newWeapon.RangeCountered = counteredRangeText.Text;
         }
 
-        private void MFSelect_ValueChanged(object sender, EventArgs e)
-        {
-            newWeapon.MoveFire = (int)MFSelect.Value;
-        }
+        
 
         private void FireArcsText_TextChanged(object sender, EventArgs e)
         {
@@ -123,6 +120,11 @@ namespace Dropzone_Database_Manager.View
             AddWeaponsForm newScreen = new AddWeaponsForm(unit);
             newScreen.Show();
             Close();
+        }
+
+        private void MFText_TextChanged(object sender, EventArgs e)
+        {
+            newWeapon.MoveFire = MFText.Text;
         }
     }
 }

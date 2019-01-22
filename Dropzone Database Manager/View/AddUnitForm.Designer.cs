@@ -189,6 +189,7 @@
             // 
             this.LandingZoneCombo.FormattingEnabled = true;
             this.LandingZoneCombo.Items.AddRange(new object[] {
+            "Tiny",
             "S",
             "M",
             "L"});
@@ -256,7 +257,18 @@
             // 
             // CQBSelect
             // 
+            this.CQBSelect.DecimalPlaces = 1;
+            this.CQBSelect.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.CQBSelect.Location = new System.Drawing.Point(5, 61);
+            this.CQBSelect.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.CQBSelect.Name = "CQBSelect";
             this.CQBSelect.Size = new System.Drawing.Size(74, 27);
             this.CQBSelect.TabIndex = 20;

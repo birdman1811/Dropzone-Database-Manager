@@ -26,6 +26,8 @@ namespace Dropzone_Database_Manager.View
             transportListBox.DisplayMember = "TransportOptions";
             specialListBox.DataSource = newUnit.Special;
             specialListBox.DisplayMember = "Special";
+            infrantryGroup.Visible = false;
+            groupBox4.Visible = false;
         }
 
         private void MainMenuButton_Click(object sender, EventArgs e)
@@ -72,6 +74,21 @@ namespace Dropzone_Database_Manager.View
         private void TypeCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             newUnit.Type = (string)TypeCombo.SelectedItem;
+            if (newUnit.Type == "Infantry")
+            {
+                infrantryGroup.Visible = true;
+                groupBox4.Visible = false;
+            } 
+            if (newUnit.Type == "Aircraft")
+            {
+                groupBox4.Visible = true;
+                infrantryGroup.Visible = false;
+            }
+            if (newUnit.Type == "Vehicle")
+            {
+                infrantryGroup.Visible = false;
+                groupBox4.Visible = false;
+            }
         }
 
         private void CategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,7 +103,7 @@ namespace Dropzone_Database_Manager.View
 
         private void CQBSelect_ValueChanged(object sender, EventArgs e)
         {
-            newUnit.Cqb = (int)CQBSelect.Value;
+            newUnit.Cqb = CQBSelect.Value;
         }
 
         private void FortitudeSelect_ValueChanged(object sender, EventArgs e)
@@ -100,6 +117,7 @@ namespace Dropzone_Database_Manager.View
             cmListBox.DataSource = null;
             cmListBox.DataSource = newUnit.CounterMeasures;
             cmListBox.DisplayMember = "CounterMeasure";
+            cmText.Clear();
         }
 
         private void RemoveCMButton_Click(object sender, EventArgs e)
@@ -117,6 +135,7 @@ namespace Dropzone_Database_Manager.View
             SCListBox.DataSource = null;
             SCListBox.DataSource = newUnit.SquadSizeCoherancy;
             SCListBox.DisplayMember = "SquadSizeCoherancy";
+            SCText.Clear();
         }
 
         private void SCRemoveButton_Click(object sender, EventArgs e)
@@ -134,6 +153,7 @@ namespace Dropzone_Database_Manager.View
             transportListBox.DataSource = null;
             transportListBox.DataSource = newUnit.TransportOptions;
             transportListBox.DisplayMember = "TransportOptions";
+            transportText.Clear();
         }
 
         private void RemoveTransportButton_Click(object sender, EventArgs e)
@@ -151,6 +171,7 @@ namespace Dropzone_Database_Manager.View
             specialListBox.DataSource = null;
             specialListBox.DataSource = newUnit.Special;
             specialListBox.DisplayMember = "Special";
+            specialText.Clear();
         }
 
         private void RemoveSpecialButton_Click(object sender, EventArgs e)
