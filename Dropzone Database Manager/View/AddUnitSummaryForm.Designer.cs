@@ -87,6 +87,7 @@
             this.removeRuleButton.TabIndex = 5;
             this.removeRuleButton.Text = "Remove Rule";
             this.removeRuleButton.UseVisualStyleBackColor = true;
+            this.removeRuleButton.Click += new System.EventHandler(this.RemoveRuleButton_Click);
             // 
             // uniqueRulesListBox
             // 

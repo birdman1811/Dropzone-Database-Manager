@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MFText = new System.Windows.Forms.TextBox();
             this.OptionalCostSelect = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.isOptionalCheckBox = new System.Windows.Forms.CheckBox();
@@ -60,7 +61,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ContinueButton = new System.Windows.Forms.Button();
-            this.MFText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OptionalCostSelect)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -103,6 +103,14 @@
             this.panel1.Size = new System.Drawing.Size(946, 476);
             this.panel1.TabIndex = 3;
             // 
+            // MFText
+            // 
+            this.MFText.Location = new System.Drawing.Point(239, 252);
+            this.MFText.Name = "MFText";
+            this.MFText.Size = new System.Drawing.Size(173, 20);
+            this.MFText.TabIndex = 13;
+            this.MFText.TextChanged += new System.EventHandler(this.MFText_TextChanged);
+            // 
             // OptionalCostSelect
             // 
             this.OptionalCostSelect.Location = new System.Drawing.Point(450, 397);
@@ -141,7 +149,7 @@
             this.button1.Location = new System.Drawing.Point(676, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(253, 58);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 30;
             this.button1.Text = "Add Weapon";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -414,14 +422,6 @@
             this.ContinueButton.Text = "Continue";
             this.ContinueButton.UseVisualStyleBackColor = true;
             this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
-            // 
-            // MFText
-            // 
-            this.MFText.Location = new System.Drawing.Point(239, 252);
-            this.MFText.Name = "MFText";
-            this.MFText.Size = new System.Drawing.Size(173, 20);
-            this.MFText.TabIndex = 24;
-            this.MFText.TextChanged += new System.EventHandler(this.MFText_TextChanged);
             // 
             // AddWeaponsForm
             // 

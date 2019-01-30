@@ -51,6 +51,11 @@ namespace Dropzone_Database_Manager.View
 
         private void UniqueRulesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void RemoveRuleButton_Click(object sender, EventArgs e)
+        {
             string ruleRemove = (string)uniqueRulesListBox.SelectedValue;
             newUnit.RemoveExtraRule(ruleRemove);
             uniqueRulesListBox.DataSource = null;

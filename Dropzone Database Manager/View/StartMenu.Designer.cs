@@ -77,6 +77,7 @@
             this.FactionsButton.TabIndex = 1;
             this.FactionsButton.Text = "Factions";
             this.FactionsButton.UseVisualStyleBackColor = true;
+            this.FactionsButton.Click += new System.EventHandler(this.FactionsButton_Click);
             // 
             // UnitsButton
             // 

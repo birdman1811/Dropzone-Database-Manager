@@ -39,7 +39,7 @@ namespace Dropzone_Database_Manager.View
 
         private void WeaponButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(newUnit.Faction, " ", newUnit.Name);
+            
             AddWeaponsForm newScreen = new AddWeaponsForm(newUnit);
             newScreen.Show();
             Close();

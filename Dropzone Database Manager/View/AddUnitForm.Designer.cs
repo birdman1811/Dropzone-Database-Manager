@@ -475,7 +475,11 @@
             "Support",
             "Exotic",
             "Transport",
-            "Airstrike"});
+            "Airstrike",
+            "Grasping*",
+            "*",
+            "Gate",
+            "Drill"});
             this.categoryCombo.Location = new System.Drawing.Point(456, 62);
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(121, 21);
