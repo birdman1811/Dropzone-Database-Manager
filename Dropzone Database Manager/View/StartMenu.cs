@@ -19,11 +19,6 @@ namespace Dropzone_Database_Manager.View
         public StartMenu()
         {
             InitializeComponent();
-            var unitList = unitControl.GetAllUnitsforFactionAsync("ucmunits");
-
-            Console.WriteLine(unitList);
-
-
         }
 
         private void UnitsButton_Click(object sender, EventArgs e)

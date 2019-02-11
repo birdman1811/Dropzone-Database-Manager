@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dropzone_Database_Manager.DataStore
 {
-    public class Unit
+    public class UnitClass
     {
+        string _id;
         string id;
         string faction;
         string name;
@@ -27,7 +28,7 @@ namespace Dropzone_Database_Manager.DataStore
         List<Weapon> weapons;
         List<string> extraRules;
 
-        public Unit()
+        public UnitClass()
         {
             CounterMeasures = new List<string>();
             SquadSizeCoherancy = new List<string>();
@@ -37,7 +38,7 @@ namespace Dropzone_Database_Manager.DataStore
             ExtraRules = new List<string>();
         }
 
-        public Unit(string id, string faction, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, decimal cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
+        public UnitClass(string id, string faction, string name, int armour, int move, List<string> counterMeasures, int damagePoints, int points, string type, string category, decimal cqb, int fortitude, List<string> squadSizeCoherancy, string landingZone, List<string> transportOptions, List<string> special, List<Weapon> weapons, List<string> extraRules)
         {
             this.Id = id;
             this.Name = name;
@@ -136,6 +137,16 @@ namespace Dropzone_Database_Manager.DataStore
         public void RemoveSpecialRule(string specialRule)
         {
             Special.Remove(specialRule);
+        }
+
+        public void SetCouchID(string id)
+        {
+            this._id = id;
+        }
+
+        public string GetCouchID()
+        {
+            return this._id;
         }
     }
 }

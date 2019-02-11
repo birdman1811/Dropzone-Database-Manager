@@ -14,7 +14,7 @@ namespace Dropzone_Database_Manager.View
     public partial class AddUnitForm : Form
     {
 
-        Unit newUnit = new Unit();
+        UnitClass newUnit = new UnitClass();
         public AddUnitForm()
         {
             InitializeComponent();

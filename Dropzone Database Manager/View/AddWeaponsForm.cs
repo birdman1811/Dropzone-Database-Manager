@@ -13,9 +13,9 @@ namespace Dropzone_Database_Manager.View
 {
     public partial class AddWeaponsForm : Form
     {
-        Unit unit;
+        UnitClass unit;
         Weapon newWeapon = new Weapon();
-        public AddWeaponsForm(Unit newUnit)
+        public AddWeaponsForm(UnitClass newUnit)
         {
             InitializeComponent();
             unit = newUnit;
