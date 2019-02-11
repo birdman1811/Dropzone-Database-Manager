@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Controllers\FactionController.cs" />
     <Compile Include="Controllers\FactionQT.cs" />
-    <Compile Include="Controllers\QuickType.cs" />
+    <Compile Include="Controllers\UnitQT.cs" />
     <Compile Include="Controllers\UnitController.cs" />
     <Compile Include="DataStore\AccountType.cs" />
     <Compile Include="DataStore\Battlegroup.cs" />

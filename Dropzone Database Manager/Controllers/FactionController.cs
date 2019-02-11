@@ -54,14 +54,15 @@ namespace Dropzone_Database_Manager.Controllers
                     foreach(var row in factions.Rows)
                     {
                         FactionClass newFaction = new FactionClass();
-                        newFaction.SetCouchID(row.Key);
+                        newFaction.SetCouchID(row.Id);
                         newFaction.Name = row.Doc.Name;
                         newFaction.Lore = row.Doc.Lore;
                         newFaction.GamePlay = row.Doc.GamePlay;
                         newFaction.Imageurl = row.Doc.Imageurl;
+
+                        factionList.Add(newFaction);
                     }
-
-
+                                       
                 }
 
                 catch (HttpRequestException e)

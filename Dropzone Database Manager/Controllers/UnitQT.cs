@@ -6,7 +6,7 @@
 //
 //    var ucmUnits = Units.FromJson(jsonString);
 
-namespace QuickType
+namespace UnitQT
 {
     using System;
     using System.Collections.Generic;
@@ -147,12 +147,12 @@ namespace QuickType
 
     public partial class Units
     {
-        public static Units FromJson(string json) => JsonConvert.DeserializeObject<Units>(json, QuickType.Converter.Settings);
+        public static Units FromJson(string json) => JsonConvert.DeserializeObject<Units>(json, UnitQT.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Units self) => JsonConvert.SerializeObject(self, QuickType.Converter.Settings);
+        public static string ToJson(this Units self) => JsonConvert.SerializeObject(self, UnitQT.Converter.Settings);
     }
 
     internal static class Converter

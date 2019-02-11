@@ -39,33 +39,14 @@ namespace Dropzone_Database_Manager.Controllers
                 try
                 {
                     string address = "http://31.132.4.108:5984/dropzoneunits/_design/" + faction + "units/_view/allunits";
-                    /*if (faction == "ucm")
-                    {
-                        address = "http://31.132.4.108:5984/dropzoneunits/_design/"+faction+"units/_view/allunits";
-                    }
-                    if (faction == "scourge")
-                    {
-                        address = "http://31.132.4.108:5984/dropzoneunits/_design/scourgeunits/_view/allunits";
-                    }
-                    if (faction == "phr")
-                    {
-                        address = "http://31.132.4.108:5984/dropzoneunits/_design/phrunits/_view/allunits";
-                    }
-                    if (faction == "shaltari")
-                    {
-                        address = "http://31.132.4.108:5984/dropzoneunits/_design/shaltariunits/_view/allunits";
-                    }
-                    if (faction == "resistance")
-                    {
-                        address = "http://31.132.4.108:5984/dropzoneunits/_design/resistanceunits/_view/allunits";
-                    }*/
+                    
                     HttpResponseMessage response = await client.GetAsync(address);
                     response.EnsureSuccessStatusCode();
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     Console.WriteLine(responseBody);
 
-                    var units = QuickType.Units.FromJson(responseBody);
+                    var units = UnitQT.Units.FromJson(responseBody);
 
                     foreach (var row in units.Rows)
                     {
@@ -102,7 +83,7 @@ namespace Dropzone_Database_Manager.Controllers
                         {
                             newUnit.AddSpecialRule(special);
                         }
-                        foreach(QuickType.Weapon weapon in row.Key.Weapons)
+                        foreach(UnitQT.Weapon weapon in row.Key.Weapons)
                         {
                             Weapon newWeapon = new Weapon();
                             newWeapon.Name = weapon.Name;
