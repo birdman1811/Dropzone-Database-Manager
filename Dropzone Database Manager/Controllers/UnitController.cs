@@ -20,13 +20,9 @@ namespace Dropzone_Database_Manager.Controllers
             
             using (var client = new MyCouchClient("http://31.132.4.108:5984", "dropzoneunits"))
             {
-                string output = JsonConvert.SerializeObject(unit);
-                Console.WriteLine(output);
+                string output = JsonConvert.SerializeObject(unit);                
 
-                var response = client.Documents.PostAsync(output);
-
-                Console.WriteLine(response.IsCompleted);
-                Console.WriteLine(response.Result.Reason);
+                var response = client.Documents.PostAsync(output);                
 
                 MessageBox.Show("Unit Added Sucesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -42,10 +38,10 @@ namespace Dropzone_Database_Manager.Controllers
             {
                 try
                 {
-                    string address = "";
-                    if (faction == "ucm")
+                    string address = "http://31.132.4.108:5984/dropzoneunits/_design/" + faction + "units/_view/allunits";
+                    /*if (faction == "ucm")
                     {
-                        address = "http://31.132.4.108:5984/dropzoneunits/_design/ucmunits/_view/allunits";
+                        address = "http://31.132.4.108:5984/dropzoneunits/_design/"+faction+"units/_view/allunits";
                     }
                     if (faction == "scourge")
                     {
@@ -62,7 +58,7 @@ namespace Dropzone_Database_Manager.Controllers
                     if (faction == "resistance")
                     {
                         address = "http://31.132.4.108:5984/dropzoneunits/_design/resistanceunits/_view/allunits";
-                    }
+                    }*/
                     HttpResponseMessage response = await client.GetAsync(address);
                     response.EnsureSuccessStatusCode();
                     string responseBody = await response.Content.ReadAsStringAsync();

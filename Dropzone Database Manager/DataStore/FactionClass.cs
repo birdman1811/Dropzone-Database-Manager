@@ -12,6 +12,7 @@ namespace Dropzone_Database_Manager.DataStore
         string lore;
         string gamePlay;
         string imageurl;
+        string _id;
 
         public FactionClass()
         {
@@ -29,5 +30,15 @@ namespace Dropzone_Database_Manager.DataStore
         public string Lore { get => lore; set => lore = value; }
         public string GamePlay { get => gamePlay; set => gamePlay = value; }
         public string Imageurl { get => imageurl; set => imageurl = value; }
+
+        public void SetCouchID(string id)
+        {
+            this._id = id;
+        }
+
+        public string GetCouchID()
+        {
+            return this._id;
+        }
     }
 }
