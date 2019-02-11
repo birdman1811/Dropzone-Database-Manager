@@ -4,7 +4,7 @@
 //
 //    using QuickType;
 //
-//    var ucmUnits = UcmUnits.FromJson(jsonString);
+//    var ucmUnits = Units.FromJson(jsonString);
 
 namespace QuickType
 {
@@ -15,7 +15,7 @@ namespace QuickType
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class UcmUnits
+    public partial class Units
     {
         [JsonProperty("total_rows")]
         public long TotalRows { get; set; }
@@ -158,14 +158,14 @@ namespace QuickType
         public static implicit operator MoveFire(long Integer) => new MoveFire { Integer = Integer };
     }
 
-    public partial class UcmUnits
+    public partial class Units
     {
-        public static UcmUnits FromJson(string json) => JsonConvert.DeserializeObject<UcmUnits>(json, QuickType.Converter.Settings);
+        public static Units FromJson(string json) => JsonConvert.DeserializeObject<Units>(json, QuickType.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this UcmUnits self) => JsonConvert.SerializeObject(self, QuickType.Converter.Settings);
+        public static string ToJson(this Units self) => JsonConvert.SerializeObject(self, QuickType.Converter.Settings);
     }
 
     internal static class Converter

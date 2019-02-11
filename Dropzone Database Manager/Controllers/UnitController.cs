@@ -69,7 +69,7 @@ namespace Dropzone_Database_Manager.Controllers
 
                     Console.WriteLine(responseBody);
 
-                    var units = QuickType.UcmUnits.FromJson(responseBody);
+                    var units = QuickType.Units.FromJson(responseBody);
 
                     foreach (var row in units.Rows)
                     {
