@@ -73,6 +73,16 @@ namespace Dropzone_Database_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aways_the_last__blue {
+            get {
+                object obj = ResourceManager.GetObject("Aways_the_last__blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dropzone_Commander_Artwork___lowish_res {
             get {
                 object obj = ResourceManager.GetObject("Dropzone_Commander_Artwork___lowish_res", resourceCulture);

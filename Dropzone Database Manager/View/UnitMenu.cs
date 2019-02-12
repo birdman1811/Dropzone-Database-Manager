@@ -30,5 +30,12 @@ namespace Dropzone_Database_Manager.View
             newScreen.Show();
             Close();
         }
+
+        private void editUnitButton_Click(object sender, EventArgs e)
+        {
+            EditUnitMenu newScreen = new EditUnitMenu();
+            newScreen.Show();
+            Close();
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace Dropzone_Database_Manager.Controllers
             
         }
 
-        public async Task<List<UnitClass>> GetAllUnitsforFactionAsync(string faction)
+        public async Task<List<UnitClass>> GetAllUnitsforFactionAsync(FactionClass faction)
         {
             List<UnitClass> factionUnits = new List<UnitClass>();
 
@@ -38,7 +38,7 @@ namespace Dropzone_Database_Manager.Controllers
             {
                 try
                 {
-                    string address = "http://31.132.4.108:5984/dropzoneunits/_design/" + faction + "units/_view/allunits";
+                    string address = "http://31.132.4.108:5984/dropzoneunits/_design/" + faction.Name.ToLower() + "units/_view/allunits";
                     
                     HttpResponseMessage response = await client.GetAsync(address);
                     response.EnsureSuccessStatusCode();

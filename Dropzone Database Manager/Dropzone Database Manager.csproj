@@ -90,6 +90,12 @@
     <Compile Include="View\AddWeaponsForm.Designer.cs">
       <DependentUpon>AddWeaponsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\EditUnitMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EditUnitMenu.Designer.cs">
+      <DependentUpon>EditUnitMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FactionMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddWeaponsForm.resx">
       <DependentUpon>AddWeaponsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EditUnitMenu.resx">
+      <DependentUpon>EditUnitMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FactionMenu.resx">
       <DependentUpon>FactionMenu.cs</DependentUpon>
@@ -181,6 +190,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Scourge basic form autopsy illustration final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Aways the last, blue.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

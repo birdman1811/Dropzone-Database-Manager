@@ -56,6 +56,7 @@
             this.editUnitButton.TabIndex = 1;
             this.editUnitButton.Text = "Edit / Delete Unit";
             this.editUnitButton.UseVisualStyleBackColor = true;
+            this.editUnitButton.Click += new System.EventHandler(this.editUnitButton_Click);
             // 
             // addUnitBUtton
             // 
