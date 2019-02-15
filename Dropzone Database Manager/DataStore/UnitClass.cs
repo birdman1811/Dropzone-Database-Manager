@@ -9,6 +9,7 @@ namespace Dropzone_Database_Manager.DataStore
     public class UnitClass
     {
         string _id;
+        string _rev;
         string id;
         string faction;
         string name;
@@ -147,6 +148,16 @@ namespace Dropzone_Database_Manager.DataStore
         public string GetCouchID()
         {
             return this._id;
+        }
+
+        public void SetCouchRev(string rev)
+        {
+            this._rev = rev;
+        }
+
+        public string GetCouchRev()
+        {
+            return this._rev;
         }
     }
 }

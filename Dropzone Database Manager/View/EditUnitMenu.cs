@@ -86,5 +86,21 @@ namespace Dropzone_Database_Manager.View
             panel1.Visible = false;
             UnitPanel.Visible = true;
         }
+
+        private void ChangeFactionButton_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            UnitCombo.DataSource = null;
+            UnitPanel.Visible = false;
+        }
+
+        private void SelectUnitButton_Click(object sender, EventArgs e)
+        {
+            selectedUnit = (UnitClass)UnitCombo.SelectedItem;
+            UnitSheet newScreen = new UnitSheet(selectedUnit);
+            newScreen.Show();
+            Close();
+
+        }
     }
 }

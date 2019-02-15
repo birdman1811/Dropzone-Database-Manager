@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.FactionCombo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.FactionSelectButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FactionCombo = new System.Windows.Forms.ComboBox();
             this.UnitCombo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.UnitPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ChangeFactionButton = new System.Windows.Forms.Button();
+            this.SelectUnitButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.MainMenu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -54,13 +55,16 @@
             this.panel1.Size = new System.Drawing.Size(198, 248);
             this.panel1.TabIndex = 0;
             // 
-            // FactionCombo
+            // FactionSelectButton
             // 
-            this.FactionCombo.FormattingEnabled = true;
-            this.FactionCombo.Location = new System.Drawing.Point(34, 61);
-            this.FactionCombo.Name = "FactionCombo";
-            this.FactionCombo.Size = new System.Drawing.Size(131, 21);
-            this.FactionCombo.TabIndex = 0;
+            this.FactionSelectButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FactionSelectButton.Location = new System.Drawing.Point(34, 130);
+            this.FactionSelectButton.Name = "FactionSelectButton";
+            this.FactionSelectButton.Size = new System.Drawing.Size(131, 64);
+            this.FactionSelectButton.TabIndex = 4;
+            this.FactionSelectButton.Text = "Select Faction";
+            this.FactionSelectButton.UseVisualStyleBackColor = true;
+            this.FactionSelectButton.Click += new System.EventHandler(this.FactionSelectButton_Click);
             // 
             // label1
             // 
@@ -73,16 +77,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Faction";
             // 
-            // FactionSelectButton
+            // FactionCombo
             // 
-            this.FactionSelectButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactionSelectButton.Location = new System.Drawing.Point(34, 130);
-            this.FactionSelectButton.Name = "FactionSelectButton";
-            this.FactionSelectButton.Size = new System.Drawing.Size(131, 64);
-            this.FactionSelectButton.TabIndex = 4;
-            this.FactionSelectButton.Text = "Select Faction";
-            this.FactionSelectButton.UseVisualStyleBackColor = true;
-            this.FactionSelectButton.Click += new System.EventHandler(this.FactionSelectButton_Click);
+            this.FactionCombo.FormattingEnabled = true;
+            this.FactionCombo.Location = new System.Drawing.Point(34, 61);
+            this.FactionCombo.Name = "FactionCombo";
+            this.FactionCombo.Size = new System.Drawing.Size(131, 21);
+            this.FactionCombo.TabIndex = 0;
             // 
             // UnitCombo
             // 
@@ -106,23 +107,36 @@
             // UnitPanel
             // 
             this.UnitPanel.BackColor = System.Drawing.Color.MidnightBlue;
-            this.UnitPanel.Controls.Add(this.button1);
+            this.UnitPanel.Controls.Add(this.ChangeFactionButton);
+            this.UnitPanel.Controls.Add(this.SelectUnitButton);
             this.UnitPanel.Controls.Add(this.label2);
             this.UnitPanel.Controls.Add(this.UnitCombo);
-            this.UnitPanel.Location = new System.Drawing.Point(530, 180);
+            this.UnitPanel.Location = new System.Drawing.Point(491, 148);
             this.UnitPanel.Name = "UnitPanel";
-            this.UnitPanel.Size = new System.Drawing.Size(198, 248);
+            this.UnitPanel.Size = new System.Drawing.Size(199, 302);
             this.UnitPanel.TabIndex = 4;
             // 
-            // button1
+            // ChangeFactionButton
             // 
-            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(34, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 64);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Select Unit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ChangeFactionButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangeFactionButton.Location = new System.Drawing.Point(34, 214);
+            this.ChangeFactionButton.Name = "ChangeFactionButton";
+            this.ChangeFactionButton.Size = new System.Drawing.Size(131, 64);
+            this.ChangeFactionButton.TabIndex = 5;
+            this.ChangeFactionButton.Text = "Change Faction";
+            this.ChangeFactionButton.UseVisualStyleBackColor = true;
+            this.ChangeFactionButton.Click += new System.EventHandler(this.ChangeFactionButton_Click);
+            // 
+            // SelectUnitButton
+            // 
+            this.SelectUnitButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectUnitButton.Location = new System.Drawing.Point(34, 111);
+            this.SelectUnitButton.Name = "SelectUnitButton";
+            this.SelectUnitButton.Size = new System.Drawing.Size(131, 64);
+            this.SelectUnitButton.TabIndex = 4;
+            this.SelectUnitButton.Text = "Select Unit";
+            this.SelectUnitButton.UseVisualStyleBackColor = true;
+            this.SelectUnitButton.Click += new System.EventHandler(this.SelectUnitButton_Click);
             // 
             // panel2
             // 
@@ -173,8 +187,9 @@
         private System.Windows.Forms.ComboBox UnitCombo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel UnitPanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SelectUnitButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button MainMenu;
+        private System.Windows.Forms.Button ChangeFactionButton;
     }
 }

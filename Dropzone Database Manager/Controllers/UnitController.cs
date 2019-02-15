@@ -43,15 +43,15 @@ namespace Dropzone_Database_Manager.Controllers
                     HttpResponseMessage response = await client.GetAsync(address);
                     response.EnsureSuccessStatusCode();
                     string responseBody = await response.Content.ReadAsStringAsync();
-
-                    Console.WriteLine(responseBody);
+                    
 
                     var units = UnitQT.Units.FromJson(responseBody);
 
                     foreach (var row in units.Rows)
                     {
                         UnitClass newUnit = new UnitClass();
-                        newUnit.SetCouchID(row.Key.KeyId);
+                        newUnit.SetCouchID(row.Key.KeyId);                        
+                        newUnit.SetCouchRev(row.Key.Rev);
                         newUnit.Id = row.Key.Id;
                         newUnit.Name = row.Key.Name;
                         newUnit.Armour = (int)row.Key.Armour;
@@ -118,6 +118,21 @@ namespace Dropzone_Database_Manager.Controllers
                 return factionUnits;
         }
 
-        
+        public void UpdateUnit(UnitClass unit)
+        {
+            using (var client = new MyCouchClient("http://31.132.4.108:5984", "dropzoneunits"))
+            {
+                string output = JsonConvert.SerializeObject(unit);
+
+                string unitID = unit.GetCouchID();
+
+                var response = client.Documents.PutAsync(unitID, unit.GetCouchRev(), output);               
+
+                MessageBox.Show("Unit Updated Sucesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+
     }
 }
